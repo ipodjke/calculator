@@ -9,25 +9,25 @@ class Calculator:
     """Класс используемый для создания калькуляторов расходов.
 
     --------
-    Note
+    Note:
         - Для коррктной работы необходими импортировать ConvertNumber, datetime
         - Приводит тип перемоной limit к float. В случае невозможости
         приведения к типу генерирует исключение ValueError, TypeError
         и присвает переменой 0
     --------
-    Атрибуты
-    limit : float
-        лимимт расходов
-    records : list
-        хранит записи о расходах
+    Параметры:
+        limit : float
+            лимимт расходов
+        records : list
+            хранит записи о расходах
     --------
-    Методы
-    add_record()
-        добавляет запись в records
-    get_today_stats()
-        считает расходы за сегодня
-    get_week_stats()
-        считает расходы за прошедшие 7 дней
+    Методы:
+        add_record()
+            добавляет запись в records
+        get_today_stats()
+            считает расходы за сегодня
+        get_week_stats()
+            считает расходы за прошедшие 7 дней
     """
     def __init__(self, limit: float) -> None:
         """Устанавливает атрибуты и осуществляет приведение типов.
@@ -36,11 +36,11 @@ class Calculator:
         приведения к типу генерирует исключение ValueError, TypeError
         и присвает переменой 0
         --------
-        Методы
-        limit : float
-            лимимт расходов
-        records : list
-            хранит записи о расходах
+        Параметры:
+            limit : float
+                лимимт расходов
+            records : list
+                хранит записи о расходах
         """
         self.number_converter = ConvertNumber()
         self.limit = self.number_converter.convert_to_float(limit)
@@ -49,12 +49,12 @@ class Calculator:
     def add_record(self, operation_record: object) -> None:
         """Добавляет запись в список records.
 
-        Параметры
-        operation_record : object
-            запись для добавления в список records
+        Параметры:
+            operation_record : object
+                запись для добавления в список records
         --------
-        Возвращаемое значение
-        None
+        Возвращаемое значение:
+            None
         """
         self.records.append(operation_record)
 
@@ -64,8 +64,8 @@ class Calculator:
         Линейно проходит список records, ищет записи с
         сегоднящней датой и суммирует их значения
         --------
-        Возвращаемое значение
-        float
+        Возвращаемое значение:
+            float
         """
         today = dt.date.today()
         expenses = [record.amount
@@ -79,8 +79,8 @@ class Calculator:
         Линейно проходит список records, ищет записи с
         датой за прошедшие 7 дней и суммирует их значения
         --------
-        Возвращаемое значение
-        float
+        Возвращаемое значение:
+            float
         """
         today = dt.date.today()
         week_offset = dt.timedelta(days=6)
@@ -98,9 +98,9 @@ class CaloriesCalculator(Calculator):
     Являеся наследником класса Calculator. Не переопределяет и не расширяет
     поведение родительского класса
     --------
-    Методы
-    get_calories_remained()
-        определяет остаток калорий на день
+    Методы:
+        get_calories_remained()
+            определяет остаток калорий на день
     """
     def get_calories_remained(self) -> str:
         """определяет остаток калорий на день
@@ -108,8 +108,8 @@ class CaloriesCalculator(Calculator):
         Основное применени - определить остаток калорий и сформировать
         сообщение
         --------
-        Возвращаемое значение
-        str
+        Возвращаемое значение:
+            str
         """
         calories_left = self.limit - self.get_today_stats()
         if calories_left > 0:
@@ -127,13 +127,13 @@ class CashCalculator(Calculator):
     (USD_RATE, EURO_RATE), хранящие курсы валют. Хранит курс валют и
     обеспечивает перевод в указаную валюту
     --------
-    Note
+    Note:
         В случае передачи отсутсвующей в классее валюты подсчет осуществляется
         в условной валюте сопостовимой с рублем
     --------
-    Методы
-    get_today_cash_remained()
-        определяет остаток денег на день и переводит в указанную валюту
+    Методы:
+        get_today_cash_remained()
+            определяет остаток денег на день и переводит в указанную валюту
     """
     USD_RATE = 60.00
     EURO_RATE = 70.00
@@ -150,12 +150,12 @@ class CashCalculator(Calculator):
         подсчета остатка денег. В случае передачи отсутсвующей в классе
         валюты подсчет осуществляется в условной валюте сопостовимой с рублем
         --------
-        Параметры
-        currency : str
-            наименование валюты
+        Параметры:
+            currency : str
+                наименование валюты
         --------
-        Возвращаемое значение
-        str
+        Возвращаемое значение:
+            str
         """
         cash_left = self.limit - self.get_today_stats()
         try:
@@ -177,41 +177,41 @@ class Record:
 
     Основное применени - хранения информации о расходах на конктретную дату
     --------
-    Note
+    Note:
         - Для коррктной работы необходими импортировать ConvertNumber,
-        WrongDataFormat, datetime, typing
+            WrongDataFormat, datetime, typing
         - Приводит тип перемоной amount к float. В случае невозможости
-        приведения к типу генерирует исключение ValueError, TypeError
-        и присвает переменой 0
+            приведения к типу генерирует исключение ValueError, TypeError
+            и присвает переменой 0
         - По умолчанию присваивает переменой date значение None
         - Приводит тип переменой date к datetime. В случае невозможости
-        приведения к типу генерирует исключение WrongDataFormat и присвает
-        переменой сегоднящнюю дату
+            приведения к типу генерирует исключение WrongDataFormat и присвает
+            переменой сегоднящнюю дату
     --------
-    Атрибуты
-    amount : float
-        данные о расходах
-    comment : str
-        комментарии к записи
-    date : str, optional (по умолчанию None)
-        дата рассходов
-    --------
-    Методы
-    не имеете публичных методов
-    """
-    def __init__(self,
-                 amount: float,
-                 comment: str,
-                 date: Optional[str] = None) -> None:
-        """Устанавливает и выполняет преобразование типов данных.
-
-        Атрибуты
+    Параметры:
         amount : float
             данные о расходах
         comment : str
             комментарии к записи
         date : str, optional (по умолчанию None)
             дата рассходов
+    --------
+    Методы:
+        не имеете публичных методов
+    """
+    def __init__(self,
+                 amount: float,
+                 comment: str,
+                 date: Optional[str] = None) -> None:
+        """Устанавливает и выполняет преобразование типов данных.
+        --------
+        Параметры:
+            amount : float
+                данные о расходах
+            comment : str
+                комментарии к записи
+            date : str, optional (по умолчанию None)
+                дата рассходов
         """
         self.number_converter = ConvertNumber()
         self.amount = self.number_converter.convert_to_float(amount)
