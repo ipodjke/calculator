@@ -8,10 +8,6 @@ class ConvertNumber:
         приведения к типу генерирует исключение ValueError, TypeError
         и присвает переменой 0
     --------
-    Атрибуты
-    number : (int, float)
-        число для приведения типа
-    --------
     Методы
     convert_to_float(number)
         приводит число к типу float и возвращает его,
@@ -33,7 +29,7 @@ class ConvertNumber:
             число для приведения типа
         --------
         Возвращаемое значение
-        float
+            float
         """
         if isinstance(number, float):
             return number
