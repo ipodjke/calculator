@@ -10,21 +10,21 @@
 
 ## Особенности
 - Данные передаваемые в калькулятором описываются классом Record
->class Record:
->    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Класс используемый для хранения данных.
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Основное применени - хранения информации о расходах на конктретную дату
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Атрибуты
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount : float
->       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;данные о расходах
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment : str
->       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;комментарии к записи
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date : str, optional (по умолчанию None)
->       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;дата рассходов
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Методы
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;не имеете публичных методов
->   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""
+>class Record:</br>
+>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Класс используемый для хранения данных.</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Основное применени - хранения информации о расходах на конктретную дату</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Атрибуты</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount : float</br>
+>       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;данные о расходах</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment : str</br>
+>       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;комментарии к записи</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date : str, optional (по умолчанию None)</br>
+>       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;дата рассходов</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Методы</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;не имеете публичных методов</br>
+>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""</br>
 
 ## Цель
 - Освоенние ООП
